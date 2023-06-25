@@ -1,15 +1,15 @@
 const { Sequelize, DataTypes } = require('sequelize');
 
-const sequilize = new Sequelize('mysql://root@localhost:3306/gpt-team')
+const sequilize = new Sequelize('mysql://root@localhost:3306/pweb')
 
 const Forms = sequilize.define('Forms', {
     form_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         allowNull: false
     },
     user_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'User',

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membuat Form Login</title>
+  <link rel="stylesheet" href="css/login.css"/>
+</head>
+<body>
+<div class="wrapper">
+      <div class="title-text">
+        <div class="title login">Form Login</div>
+        <div class="title signup">Form Registrasi</div>
+      </div>
+      <div class="form-container">
+        <div class="slide-controls">
+          <input type="radio" name="slide" id="login" checked>
+          <input type="radio" name="slide" id="signup">
+          <label for="login" class="slide login">Login</label>
+          <label for="signup" class="slide signup">Daftar</label>
+          <div class="slider-tab"></div>
+        </div>
+        <div class="form-inner">
+          <form action="#" class="login">
+            <pre>
+            </pre>
+            <div class="field">
+              <input type="text" placeholder="Masukan Email " required>
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Masukan Password" required>
+            </div>
+            <div class="pass-link"><a href="#">Lupa password?</a></div>
+            <div class="field btn">
+              <div class="btn-layer"></div>
+              <input type="submit" value="Login">
+            </div>
+            <div class="signup-link">Buat akun <a href="">Daftar sekarang</a></div>
+          </form>
+          <form action="#" class="signup">
+            <div class="field">
+              <input type="text" placeholder="Masukan Nama" required>
+            </div>
+            <div class="field">
+              <input type="text" placeholder="Masukan Email" required>
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Masukan Password" required>
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Ulangi password" required>
+            </div>
+            <div class="field btn">
+              <div class="btn-layer"></div>
+              <input type="submit" value="Daftar">
+            </div>
+            <div class="signup-link">Sudah punya akun? <a href="">Login</a></div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+        const loginText = document.querySelector(".title-text .login");
+      const loginForm = document.querySelector("form.login");
+      const loginBtn = document.querySelector("label.login");
+      const signupBtn = document.querySelector("label.signup");
+      const signupLink = document.querySelector("form .signup-link a");
+      signupBtn.onclick = (()=>{
+        loginForm.style.marginLeft = "-50%";
+        loginText.style.marginLeft = "-50%";
+      });
+      loginBtn.onclick = (()=>{
+        loginForm.style.marginLeft = "0%";
+        loginText.style.marginLeft = "0%";
+      });
+      signupLink.onclick = (()=>{
+        signupBtn.click();
+        return false;
+      });
+        // const login = document.getElementById("login");
+        // login.addEventListener("submit", async (e) => {
+        //   e.preventDefault();
+  
+        //   // reset errors
+        //   username = document.getElementById("username").value;
+        //   password = document.getElementById("password").value;
+  
+        //   try {
+        //     const res = await fetch("http://localhost:3000/auth/login", {
+        //       method: "POST",
+        //       body: JSON.stringify({ username, password }),
+        //       headers: { "Content-Type": "application/json" },
+        //     });
+        //     const data = await res.json();
+        //     console.log(data);
+        //     console.log(data);
+        //     if (data.errors) {
+        //       username.textContent = data.errors.username;
+        //       passwordError.textContent = data.errors.password;
+        //     }
+        //     if (data.user) {
+        //       sessionStorage.setItem("token", data["token"]);
+        //       sessionStorage.setItem("user_id", data["user"]);
+        //       location.assign("./dash.html");
+        //     }
+        //   } catch (err) {
+        //     console.log(err);
+        //   }
+        // });
+      </script>
+
+</body>
+</html>
